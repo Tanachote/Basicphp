@@ -23,7 +23,7 @@
         <p style="padding-left: 300px; font-size: 25px;">By calculating your income, outcome ,and your balance with csv file. </p>
         <div class="row">
             <div style="right: 500px;>
-                <button type="button" class="btn btn-danger" onclick="location.href='./src/download.php'">Download CSV File</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='./download.php'">Download CSV File</button>
             </div>
         </div>
         <hr>
