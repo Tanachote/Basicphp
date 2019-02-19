@@ -30,7 +30,7 @@ if(file_exists($filepath)) {
     readfile($filepath);
     exit;
 } else {
-    header("Location: ./index1.php");
+    header("Location: ./index.php");
     die();
 }
 ?>
