@@ -1,0 +1,50 @@
+html {
+    width: 100%;
+    background: transparent url(https://images.pexels.com/photos/164497/pexels-photo-164497.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat;
+    background-size: cover;
+    fill-opacity: initial;
+}
+
+h1 {
+    width: fit-content;
+    font-size: 80px;
+    color: white;
+    background: #2d2e3b;
+    padding-right: 150px;
+    opacity: 0.85;
+}
+
+h2 {
+    width: fit-content;
+    font-size: 80px;
+    color: #2d2e3b;
+    background:white;
+    padding-right: 150px;
+    opacity: 0.85;
+}
+
+.importBox {
+    width: 50%;
+    border: solid 1px white;
+    border-radius: 10px;
+}
+
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(10, 2fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .one {
+    grid-column: 1 / 11;
+    grid-row: 2;
+    width: 99.5%;
+    opacity: 1;
+    margin: 0 0 0 0;
+}
+
+.two { 
+    grid-column: 1 / 11;
+    grid-row: 3;
+}
