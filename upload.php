@@ -82,47 +82,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             // echo "Sorry, there was an error uploading your image.";
         }
+    }
+
+    if (empty($_POST["name"])) {
+        $nameErr = "Name is required";
     } else {
-        if (empty($_POST["name"])) {
-            $nameErr = "Name is required";
-        } else {
-            // check if name only contains letters and whitespace
-            if (!preg_match('/^[a-zA-Z ]+$/i', test_input($_POST["name"]))) {
-                $nameErr = "Only letters and white space allowed";
-                $name = "";
-            } else {
-                $name = test_input($_POST["name"]);
-            }
-        }
-    
-        if (empty($_POST["lastname"])) {
-            $lastnameErr = "Lastname is required";
-        } else {
-            // check if name only contains letters and whitespace
-            if (!preg_match('/^[a-zA-Z ]+$/i', test_input($_POST["lastname"])) {
-                $lastnameErr = "Only letters and white space allowed";
-                $lastname = "";
-            } else {
-                $lastname = test_input($_POST["lastname"]);
-            }
-          }
-    
-          
-    
-        if (empty($_POST["email"])) {
-            $emailErr = "Email is required";
-        } else {
-            // check if e-mail address is well-formed
-            if (!filter_var(test_input($_POST["email"]), FILTER_VALIDATE_EMAIL)) {
-                $emailErr = "Invalid email format";
-                $email = "";
-            } else {
-                $email = test_input($_POST["email"]);
-            }
+        $name = test_input($_POST["name"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match('/^[a-zA-Z ]+$/i', $name)) {
+            $nameErr = "Only letters and white space allowed";
+            $name = "";
         }
     }
 
+    if (empty($_POST["lastname"])) {
+        $lastnameErr = "Lastname is required";
+    } else {
+        $lastname = test_input($_POST["lastname"]);
+        // check if name only contains letters and whitespace
+        if (!preg_match('/^[a-zA-Z ]+$/i', $lastname)) {
+            $lastnameErr = "Only letters and white space allowed";
+            $lastname = "";
+        }
+      }
+
+      
+
+    if (empty($_POST["email"])) {
+        $emailErr = "Email is required";
+    } else {
+        $email = test_input($_POST["email"]);
+        // check if e-mail address is well-formed
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Invalid email format";
+            $email = "";
+        }
     }
+}
 
 function test_input($data) {
     $data = trim($data);
