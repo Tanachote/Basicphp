@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-sm-5">
             <?php
-                if (preg_match("/^[a-z]$/", $name)) {
+                if ($name != "")) {
             ?>
                 <div class="card" style="width: 16rem;">
                     <img class="card-img-top" src="<?php echo $target_img;?>">
