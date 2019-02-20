@@ -1,5 +1,5 @@
 <?php
-    include 'upload.php';
+    include './upload.php';
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-sm-5">
             <?php
-                if ($name != "")) {
+                if ($name != "") {
             ?>
                 <div class="card" style="width: 16rem;">
                     <img class="card-img-top" src="<?php echo $target_img;?>">

@@ -3,12 +3,13 @@
 $fileErr = $imgErr = $nameErr = $lastnameErr = $emailErr = "";
 $name = $lastname = $email = "";
 $balance = 0;
-$target_img = './storages/imgs/user.png';
+$target_img = '';
+$target_file = '';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $target_dir = "./storages/";
-    $target_file = $target_dir . 'csv/' . basename($_FILES["fileToUpload"]["name"]);
-    $target_img = $target_dir . 'imgs/' . basename($_FILES["img"]["name"]) ?? 'user.png';
+    $target_dir = "";
+    $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+    $target_img = $target_dir . basename($_FILES["img"]["name"]);
     $uploadOk = 1;
     $csvFileType = pathinfo($_FILES["fileToUpload"]["name"], PATHINFO_EXTENSION);
     $imgFileType = pathinfo($_FILES["img"]["name"], PATHINFO_EXTENSION);
@@ -83,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // echo "Sorry, there was an error uploading your image.";
         }
     }
+
     if (empty($_POST["name"])) {
         $nameErr = "Name is required";
     } else {
@@ -124,8 +126,4 @@ function test_input($data) {
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
-}
-
-function checkAlpha($data) {
-    return !preg_match('/^[a-zA-Z ]+$/i', $data);
 }
