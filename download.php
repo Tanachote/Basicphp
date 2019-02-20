@@ -20,7 +20,7 @@
 // }
 
 $file = "csv-template.csv";
-$filepath = "./storages/template/" . $file;
+$filepath = "" . $file;
 
 
 if(file_exists($filepath)) {
@@ -30,7 +30,7 @@ if(file_exists($filepath)) {
     readfile($filepath);
     exit;
 } else {
-    header("Location: ./index.php");
+    header("Location: index.php");
     die();
 }
 ?>
