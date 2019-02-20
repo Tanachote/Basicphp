@@ -1,5 +1,5 @@
 <?php
-    include './upload.php';
+    include 'upload.php';
 ?>
 
 <!DOCTYPE html>
