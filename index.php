@@ -103,7 +103,7 @@
                             <?php echo $fileErr;?>
                         </small>
                     </div>
-                    <button type="submit" class="btn btn-primary" value="submit" name="submit">Processing</button>
+                    <button type="submit" class="btn btn-primary" value="submit" name="submit">Upload</button>
                 </form>
             </div>
         </div>
